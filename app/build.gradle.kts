@@ -54,10 +54,10 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        testApplicationId = "org.tasks.test"
-        applicationId = "org.tasks"
-        versionCode = 130302
-        versionName = "13.3.2"
+        testApplicationId = "com.zlq.todo.task.memo.test"
+        applicationId = "com.zlq.todo.task.memo"
+        versionCode = 1
+        versionName = "1.0.0"
         targetSdk = 33
         minSdk = 24
         testInstrumentationRunner = "org.tasks.TestRunner"
@@ -72,15 +72,15 @@ android {
 
     signingConfigs {
         create("release") {
-            val tasksKeyAlias: String? by project
-            val tasksStoreFile: String? by project
-            val tasksStorePassword: String? by project
-            val tasksKeyPassword: String? by project
+//            val tasksKeyAlias: String? by project
+//            val tasksStoreFile: String? by project
+//            val tasksStorePassword: String? by project
+//            val tasksKeyPassword: String? by project
 
-            keyAlias = tasksKeyAlias
-            storeFile = file(tasksStoreFile ?: "none")
-            storePassword = tasksStorePassword
-            keyPassword = tasksKeyPassword
+            keyAlias = "task"
+            storeFile = file("keysotre")
+            storePassword = "zlq125385034"
+            keyPassword = "zlq125385034"
         }
     }
 
@@ -134,7 +134,12 @@ android {
             dimension = "store"
         }
     }
-    packagingOptions {
+//    packagingOptions {
+//        resources {
+//            excludes += setOf("META-INF/*.kotlin_module")
+//        }
+//    }
+    packaging {
         resources {
             excludes += setOf("META-INF/*.kotlin_module")
         }
